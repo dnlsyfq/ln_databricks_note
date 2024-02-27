@@ -1,3 +1,11 @@
+# HTML
+```
+displayHTML("""
+  <font size="6" color="red" face="sans-serif">Title</font>
+""")
+```
+
+
 # Create Table from CSV in SQL
 
 ```
@@ -13,7 +21,14 @@ CREATE TABLE <name>
 spark.read.csv("/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv", header="true",inferSchema="true")
 ```
 
-# Spark ETL
+# Spark SQL
+```
+display(
+  spark.sql(" SELECT ...")
+)
+```
+
+# Spark Python ETL
 
 ```
 from pyspark.sql.functions import avg
