@@ -18,7 +18,12 @@ CREATE TABLE <name>
 
 # Create Table from CSV in Spark
 ```
-spark.read.csv("/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv", header="true",inferSchema="true")
+df = spark.read.csv("/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv", header="true",inferSchema="true")
+```
+
+```
+df = spark.read.format('csv').option('inferSchema','true').option('header','true').load('dbfs:/databricks-datasets/bikeSharing/data-001/day.csv')
+df.registerTempTable('bikeshare')
 ```
 
 # Spark SQL
